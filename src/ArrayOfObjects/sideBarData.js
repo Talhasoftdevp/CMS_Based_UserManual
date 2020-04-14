@@ -1,107 +1,108 @@
+import _ from '../Language/Language';
 export const side_bar = [
 	/************************************ ADMINISTRATION *********************************/
 	{
-		title: 'Administration',
+		title: _('Administration'),
 		data_toggle: 'Admin_isOpen',
 		childs: [
 			{
-				title: 'General',
+				title: _('General'),
 				data_toggle: 'General_isOpen',
 				childs: [
 					{
-						title: 'General',
+						title: _('General'),
 						route: '/General/General'
 					}
 				]
 			},
 			{
-				title: 'Users',
+				title: _('Users'),
 				data_toggle: 'User_isOpen',
 				childs: [
 					{
-						title: 'Create New User',
+						title: _('Create New User'),
 						route: '/Users/CreateUser'
 					},
 					{
-						title: 'Edit User',
+						title: _('Edit User'),
 						route: '/Users/EditUser'
 					},
 					{
-						title: 'Delete User',
+						title: _('Delete User'),
 						route: '/Users/DeleteUser'
 					}
 				]
 			},
 			{
-				title: 'Groups',
+				title: _('Groups'),
 				data_toggle: 'Group_isOpen',
 				childs: [
 					{
-						title: 'Create New Group',
+						title: _('Create New Group'),
 						route: '/Groups/CreateGroup'
 					},
 					{
-						title: 'Edit Group',
+						title: _('Edit Group'),
 						route: '/Groups/EditGroup'
 					},
 					{
-						title: 'Delete Group',
+						title: _('Delete Group'),
 						route: '/Groups/DeleteGroup'
 					}
 				]
 			},
 			{
-				title: 'Templates',
+				title: _('Templates'),
 				data_toggle: 'Template_isOpen',
 
 				childs: [
 					{
-						title: 'Create New Template',
+						title: _('Create New Template'),
 						route: '/Template/CreateTemplate'
 					},
 					{
-						title: 'Edit Template',
+						title: _('Edit Template'),
 						route: '/Template/EditTemplate'
 					},
 					{
-						title: 'Delete Template',
+						title: _('Delete Template'),
 						route: '/Template/DeleteTemplate'
 					}
 				]
 			},
 			{
-				title: 'Work Flow',
+				title: _('Work Flow'),
 				data_toggle: 'WorkFlow_isOpen',
 				childs: [
 					{
-						title: 'Design Work Flow',
+						title: _('Design Work Flow'),
 						route: '/WorkFlow/Design'
 					},
 					{
-						title: 'Edit Work Flow',
+						title: _('Edit Work Flow'),
 						route: '/WorkFlow/EditWorkFlow'
 					},
 					{
-						title: 'Delete WorkFlow',
+						title: _('Delete WorkFlow'),
 						route: '/WorkFlow/DeleteWorkFlow'
 					},
 					{
-						title: 'Debug',
+						title: _('Debug'),
 						route: '/Integerator/Configuration'
 					},
 					{
-						title: 'Production',
+						title: _('Production'),
 						route: '/Integerator/Configuration'
 					}
 				]
 			},
 			{
-				title: 'Integrators',
+				title: _('Integrators'),
 				data_toggle: 'Integerator_isOpen',
 
 				childs: [
 					{
-						title: 'Configuration',
+						title: _('Configuration'),
 						route: '/Integerator/Configuration'
 					}
 				]
@@ -110,104 +111,104 @@ export const side_bar = [
 	},
 	/************************************ DESKTOP *********************************/
 	{
-		title: 'Desktop',
+		title: _('Desktop'),
 		data_toggle: 'Desktop_isOpen',
 		childs: [
 			{
-				title: 'Repository',
+				title: _('Repository'),
 				data_toggle: 'repository_isOpen',
 				childs: [
 					{
-						title: 'Create New repository',
+						title: _('Create New repository'),
 						route: '/Repository/CreateRepository'
 					},
 					{
-						title: 'Rename Repository',
+						title: _('Rename Repository'),
 						route: '/Repository/RenameRepository'
 					},
 					{
-						title: 'Delete Repository',
+						title: _('Delete Repository'),
 						route: '/Repository/DeleteRepository'
 					},
 					{
-						title: 'Find Repository',
+						title: _('Find Repository'),
 						route: '/Repository/FindRepository'
 					}
 				]
 			},
 			{
-				title: 'Documents',
+				title: _('Documents'),
 				data_toggle: 'Document_isOpen',
 				childs: [
 					{
-						title: 'Upload Document',
+						title: _('Upload Document'),
 						route: '/Documents/UploadDocument'
 					},
 					{
-						title: 'Delete Document',
+						title: _('Delete Document'),
 						route: '/Documents/DeleteDocument'
 					},
 					{
-						title: 'Edit Document',
+						title: _('Edit Document'),
 						route: '/Documents/EditDocument'
 					},
 					{
-						title: 'Find Document',
+						title: _('Find Document'),
 						route: '/Documents/FindDocument'
 					},
 					{
-						title: 'Bookmark Document',
+						title: _('Bookmark Document'),
 						route: '/Documents/BookmarkDocument'
 					},
 					{
-						title: 'Copy Document',
+						title: _('Copy Document'),
 						route: '/Documents/CopyDocument'
 					},
 					{
-						title: 'Move Document',
+						title: _('Move Document'),
 						route: '/Documents/MoveDocument'
 					},
 					{
-						title: 'Download Document',
+						title: _('Download Document'),
 						route: '/Documents/DownloadDocument'
 					},
 					{
-						title: 'Create Document Shortcut',
+						title: _('Create Document Shortcut'),
 						route: '/Documents/CreateDocumentShortcut'
 					}
 				]
 			},
 			{
-				title: 'Search',
+				title: _('Search'),
 				data_toggle: 'Search_isOpen',
 				childs: [
 					{
-						title: 'Search Document',
+						title: _('Search Document'),
 						route: '/Search/Search'
 					}
 				]
 			},
 			{
-				title: 'Recycle Bin',
+				title: _('Recycle Bin'),
 				data_toggle: 'RecycleBin_isOpen',
 
 				childs: [
 					{
-						title: 'Restore File/Folder',
+						title: _('Restore File/Folder'),
 						route: '/RecycleBin/Restore_File_Folder'
 					},
 					{
-						title: 'Empty Recycle Bin',
+						title: _('Empty Recycle Bin'),
 						route: '/RecycleBin/EmptyRecycleBin'
 					}
 				]
 			},
 			{
-				title: 'Search Results',
+				title: _('Search Results'),
 				data_toggle: 'SearchResults_isOpen',
 				childs: [
 					{
-						title: 'Search Results',
+						title: _('Search Results'),
 						route: '/SearchResults/SearchResults'
 					}
 				]
@@ -216,35 +217,35 @@ export const side_bar = [
 	},
 	/************************************ ADVANCE SEARCH *********************************/
 	{
-		title: 'Advance Search',
+		title: _('Advance Search'),
 		data_toggle: 'AdvanceSearch_isOpen',
 		childs: [
 			{
-				title: 'Contextual Search',
+				title: _('Contextual Search'),
 				data_toggle: 'ContextualSearch_isOpen',
 				childs: [
 					{
-						title: 'Contextual Search',
+						title: _('Contextual Search'),
 						route: '/AdvanceSearch/ContextualSearch'
 					}
 				]
 			},
 			{
-				title: 'Search By Date',
+				title: _('Search By Date'),
 				data_toggle: 'SearchByDate_isOpen',
 				childs: [
 					{
-						title: 'Search By Date',
+						title: _('Search By Date'),
 						route: '/AdvanceSearch/SearchByDate'
 					}
 				]
 			},
 			{
-				title: 'Search By Template',
+				title: _('Search By Template'),
 				data_toggle: 'SearchByTemplate_isOpen',
 				childs: [
 					{
-						title: 'Search By Template',
+						title: _('Search By Template'),
 						route: '/AdvanceSearch/SearchByTemplate'
 					}
 				]

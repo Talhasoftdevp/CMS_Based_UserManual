@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { InputGroup } from '@blueprintjs/core';
-
+import _ from '../Language/Language';
 const StyledSidebar = styled.aside`
 	a {
 		color: #0175d8;
@@ -16,15 +15,14 @@ const StyledSidebar = styled.aside`
 `;
 
 class SearchMenu extends React.Component {
-	state = {};
 	render() {
 		return (
 			<StyledSidebar>
 				<input
-					className="input_filterbar"
-					type="search"
+					className="inputMenuSearch"
+					type="text"
 					aria-label="Search"
-					placeholder="Search Menu..."
+					placeholder={_('Search Menu...')}
 					value={this.props.search_string}
 					onChange={this.props.StoreValue}
 				/>

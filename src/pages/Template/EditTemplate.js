@@ -1,17 +1,10 @@
 import React from 'react';
-
+import _ from '../../Language/Language';
 import EditTemplate from '../../assets/Templates/EditTemplate.mp4';
 
 class Edit_Template extends React.Component {
 	state = {
 		loadVideo: true
-	};
-
-	handleVideoClick = (e) => {
-		e.target.pause();
-		e.target.currentTime = 0;
-		e.target.load();
-		e.target.play();
 	};
 
 	componentDidMount() {
@@ -28,12 +21,13 @@ class Edit_Template extends React.Component {
 		return (
 			<div>
 				<div>
-					<h3>To Edit Template, please follow below mention steps:</h3>
+					<h3>{_('To Edit Template, please follow below mention steps:')}</h3>
 					<ul>
-						<h6>Step # 1: Double Click on the Template ,to whom you want to edit</h6>
+						<h6>{_('Step # 1: Double Click on the Template ,to whom you want to edit')}</h6>
 						<h6>
-							Step # 2: Change Field Values , add new fields, reassign rights of template fields to groups
-							or add more groups as per your needs
+							{_(
+								'Step # 2: Change Field Values , add new fields, reassign rights of template fields to groups or add more groups as per your needs'
+							)}
 						</h6>
 					</ul>
 

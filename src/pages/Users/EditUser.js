@@ -1,17 +1,10 @@
 import React from 'react';
-
+import _ from '../../Language/Language';
 import EditUser from '../../assets/Users/EditUser.mp4';
 
 class Edit_User extends React.Component {
 	state = {
 		loadVideo: true
-	};
-
-	handleVideoClick = (e) => {
-		e.target.pause();
-		e.target.currentTime = 0;
-		e.target.load();
-		e.target.play();
 	};
 
 	componentDidMount() {
@@ -27,10 +20,12 @@ class Edit_User extends React.Component {
 		return (
 			<div>
 				<div>
-					<h3>To Edit User, please follow below mention steps:</h3>
+					<h3>{_('To Edit User, please follow below mention steps:')}</h3>
 					<ul>
-						<h6>Step # 1: Click on the User ,to whom you want to edit</h6>
-						<h6>Step # 2: Change Field Values , reassign or add multiple Groups as per your needs</h6>
+						<h6>{_('Step # 1: Click on the User ,to whom you want to edit')}</h6>
+						<h6>
+							{_('Step # 2: Change Field Values , reassign or add multiple Groups as per your needs')}
+						</h6>
 					</ul>
 
 					<video controls>

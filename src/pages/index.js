@@ -12,13 +12,6 @@ class Index extends React.Component {
 		loadVideo: true
 	};
 
-	handleVideoClick = (e) => {
-		e.target.pause();
-		e.target.currentTime = 0;
-		e.target.load();
-		e.target.play();
-	};
-
 	componentDidMount() {
 		// If user is on a dodgy connection, don't load the video at all
 		if ('connection' in navigator) {

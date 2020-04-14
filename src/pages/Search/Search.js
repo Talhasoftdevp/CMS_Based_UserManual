@@ -1,17 +1,10 @@
 import React from 'react';
-
+import _ from '../../Language/Language';
 import SearchDocument from '../../assets/SearchDocument/SearchDocument.mp4';
 
 class Search_Document extends React.Component {
 	state = {
 		loadVideo: true
-	};
-
-	handleVideoClick = (e) => {
-		e.target.pause();
-		e.target.currentTime = 0;
-		e.target.load();
-		e.target.play();
 	};
 
 	componentDidMount() {
@@ -28,11 +21,11 @@ class Search_Document extends React.Component {
 		return (
 			<div>
 				<div>
-					<h3>To Search Document, Please follow below mention steps:</h3>
+					<h3>{_('To Search Document, Please follow below mention steps:')}</h3>
 					<ul>
-						<h6>Step # 1: Click on Search Bar, located at top right in Navigation Bar</h6>
-						<h6>Step # 2: Input the name of document, you want to search</h6>
-						<h6>Step # 3: Press Enter to perform operation</h6>
+						<h6>{_('Step # 1: Click on Search Bar, located at top right in Navigation Bar')}</h6>
+						<h6>{_('Step # 2: Input the name of document, you want to search')}</h6>
+						<h6>{_('Step # 3: Press Enter to perform operation')}</h6>
 					</ul>
 
 					<video controls>

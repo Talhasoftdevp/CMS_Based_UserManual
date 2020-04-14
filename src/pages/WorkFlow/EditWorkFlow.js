@@ -1,17 +1,10 @@
 import React from 'react';
-
+import _ from '../../Language/Language';
 import EditWorkFlow from '../../assets/WorkFlow/EditWorkFlow.mp4';
 
 class Edit_WorkFlow extends React.Component {
 	state = {
 		loadVideo: true
-	};
-
-	handleVideoClick = (e) => {
-		e.target.pause();
-		e.target.currentTime = 0;
-		e.target.load();
-		e.target.play();
 	};
 
 	componentDidMount() {
@@ -28,14 +21,15 @@ class Edit_WorkFlow extends React.Component {
 		return (
 			<div>
 				<div>
-					<h3>To Edit Work Flow, please follow below mention steps:</h3>
+					<h3>{_('To Edit Work Flow, please follow below mention steps:')}</h3>
 					<ul>
-						<h6>Step # 1: Click on the work flow you want to edit</h6>
+						<h6>{_('Step # 1: Click on the work flow you want to edit')}</h6>
 						<h6>
-							Step # 2: Change field values, or add new actions, remove actions, add routing desicions as
-							per your needs
+							{_(
+								'Step # 2: Change field values, or add new actions, remove actions, add routing desicions as per your needs'
+							)}
 						</h6>
-						<h6>Step # 3: Click on save button, to save changes</h6>
+						<h6>{_('Step # 3: Click on save button, to save changes')}</h6>
 					</ul>
 
 					<video controls>

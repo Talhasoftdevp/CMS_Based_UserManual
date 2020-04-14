@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import svgRightArrow from '../images/right-arrow.svg';
+import svgLeftArrow from '../images/left-arrow.svg';
 import styled from 'styled-components';
 import { side_bar } from '../ArrayOfObjects/sideBarData';
 import { filter_data } from '../ArrayOfObjects/dataToFilter';
@@ -36,15 +37,28 @@ class Menu extends React.Component {
 		AdvanceSearch_isOpen: true,
 		ContextualSearch_isOpen: true,
 		SearchByDate_isOpen: true,
-		SearchByTemplate_isOpen: true
+		SearchByTemplate_isOpen: true,
+		Arrow: svgRightArrow,
+		angleOfRotation: 90
 	};
+
+	componentDidMount() {
+		if (typeof window !== 'undefined') {
+			let checkLang = localStorage.getItem('language');
+			if (checkLang == 'ar') {
+				this.setState({ sideBarWrapper: 'sidebar-wrapper_rtl' });
+				this.setState({ sideBar: 'sidebarRight' });
+				this.setState({ Arrow: svgLeftArrow });
+				this.setState({ angleOfRotation: -90 });
+			}
+		}
+	}
 
 	/***************  Side Nav Toggles *************/
 
 	/** Toggle ***/
 
 	toggleSideNav = (e) => {
-		// e.preventDefault()
 		let { toggle } = e.target.closest('div').dataset;
 		this.setState((prevState) => ({
 			[toggle]: !prevState[toggle]
@@ -72,11 +86,13 @@ class Menu extends React.Component {
 										>
 											<h5>{value.title}</h5>
 											<img
-												src={svgRightArrow}
+												src={this.state.Arrow}
 												style={{
 													height: '25px',
 													transition: '475ms',
-													transform: `rotate(${this.state[value.data_toggle] ? 90 : 0}deg)`
+													transform: `rotate(${this.state[value.data_toggle]
+														? this.state.angleOfRotation
+														: 0}deg)`
 												}}
 												alt="right arrow"
 											/>
@@ -99,14 +115,14 @@ class Menu extends React.Component {
 																>
 																	<h6>{value.title}</h6>
 																	<img
-																		src={svgRightArrow}
+																		src={this.state.Arrow}
 																		style={{
 																			height: '15px',
 																			transition: '475ms',
 																			transform: `rotate(${this.state[
 																				value.data_toggle
 																			]
-																				? 90
+																				? this.state.angleOfRotation
 																				: 0}deg)`
 																		}}
 																		alt="right arrow"
@@ -114,21 +130,19 @@ class Menu extends React.Component {
 																</div>
 																{value.childs.length > 0 &&
 																this.state[value.data_toggle] && (
-																	<ul>
+																	<ul className="Menu">
 																		{value.childs &&
 																			value.childs.map((value, key) => {
 																				return (
-																					<li
-																						className="list-group"
+																					<Link
 																						key={key}
+																						to={value.route}
+																						activeClassName="active"
 																					>
-																						<Link
-																							to={value.route}
-																							activeClassName="active"
-																						>
+																						<li className="list-group">
 																							<small>{value.title}</small>
-																						</Link>
-																					</li>
+																						</li>
+																					</Link>
 																				);
 																			})}
 																		<br />
@@ -158,7 +172,7 @@ class Menu extends React.Component {
 						<div className="sidebar">
 							{side_bar_filtered.map((value, key) => {
 								return (
-									<ul>
+									<ul className="Menu">
 										<li className="list-group" key={key}>
 											<Link to={value.route} activeClassName="active">
 												<small>{value.title}</small>

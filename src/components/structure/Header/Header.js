@@ -1,7 +1,21 @@
 import React from 'react';
 import SearchSite from '../../SearchSite';
+import _ from '../../../Language/Language';
 
 class Header extends React.Component {
+	componentDidMount() {
+		let mVarDefaultlang = localStorage.getItem('language');
+		if (mVarDefaultlang === undefined) {
+			localStorage.setItem('language', 'en');
+		}
+	}
+
+	handleChange = (e) => {
+		let mValue = e.target.value;
+		localStorage.setItem('language', mValue);
+		window.location.reload();
+	};
+
 	render() {
 		return (
 			<header
@@ -26,16 +40,17 @@ class Header extends React.Component {
 						height: '150%'
 					}}
 				>
-					<h2
+					<h4
 						style={{
 							display: 'flex',
 							alignItems: 'center',
 							width: '20%',
-							height: '150%'
+							fontSize: '21px',
+							marginBottom: '30px'
 						}}
 					>
-						Silver Docs
-					</h2>
+						{_('Silver Docs')}
+					</h4>
 					<h4
 						style={{
 							paddingLeft: '14.05rem',
@@ -49,6 +64,21 @@ class Header extends React.Component {
 						<SearchSite />
 						<div />
 					</h4>
+
+					<div className="input-group mb-3 dropDown">
+						<select
+							value={localStorage.getItem('language')}
+							className="input-group-text"
+							onChange={this.handleChange.bind(this)}
+						>
+							<option style={{ fontSize: 15 }} value="en">
+								ENGLISH
+							</option>
+							<option style={{ fontSize: 15 }} value="ar">
+								ARABIC
+							</option>
+						</select>
+					</div>
 				</div>
 			</header>
 		);

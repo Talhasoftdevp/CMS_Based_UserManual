@@ -1,17 +1,10 @@
 import React from 'react';
-
+import _ from '../../Language/Language';
 import SearchResults from '../../assets/SearchResults/SearchResults.mp4';
 
 class Search_Results extends React.Component {
 	state = {
 		loadVideo: true
-	};
-
-	handleVideoClick = (e) => {
-		e.target.pause();
-		e.target.currentTime = 0;
-		e.target.load();
-		e.target.play();
 	};
 
 	componentDidMount() {
@@ -28,15 +21,16 @@ class Search_Results extends React.Component {
 		return (
 			<div>
 				<div>
-					<h3>Search Results, displays your Search History....</h3>
-					<h4>To test this feature,Please follow bellow mention steps</h4>
+					<h3>{_('Search Results, displays your Search History....')}</h3>
+					<h4>{_('To test this feature,Please follow bellow mention steps')}</h4>
 					<ul>
-						<h6>Step # 1: Click on Search Bar, located at top right in Navigation Bar</h6>
-						<h6>Step # 2: Input the name of document, you want to search</h6>
-						<h6>Step # 3: Press Enter to perform operation</h6>
+						<h6>{_('Step # 1: Click on Search Bar, located at top right in Navigation Bar')}</h6>
+						<h6>{_('Step # 2: Input the name of document, you want to search')}</h6>
+						<h6>{_('Step # 3: Press Enter to perform operation')}</h6>
 						<h6>
-							Step # 4: Proceed to Search Results,located at Side Navigation Bar,to see your Search
-							History
+							{_(
+								'Step # 4: Proceed to Search Results,located at Side Navigation Bar,to see your Search History'
+							)}
 						</h6>
 					</ul>
 

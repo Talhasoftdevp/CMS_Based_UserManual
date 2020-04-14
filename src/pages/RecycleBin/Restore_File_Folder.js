@@ -1,17 +1,10 @@
 import React from 'react';
-
+import _ from '../../Language/Language';
 // import CreateGroup from '../../assets/CreateGroup.mp4'
 
 class Restore_File_Folder extends React.Component {
 	state = {
 		loadVideo: true
-	};
-
-	handleVideoClick = (e) => {
-		e.target.pause();
-		e.target.currentTime = 0;
-		e.target.load();
-		e.target.play();
 	};
 
 	componentDidMount() {
@@ -28,11 +21,11 @@ class Restore_File_Folder extends React.Component {
 		return (
 			<div>
 				<div>
-					<h3>To Restore File/Folder, Please follow below mention steps:</h3>
+					<h3>{_('To Restore File/Folder, Please follow below mention steps:')}</h3>
 					<ul>
-						<h6>Step # 1: Click on Recycle Bin, located at Side Navigation Bar</h6>
-						<h6>Step # 2: In Recycle Bin, Right Clcik on The File/Folder, you want to restore</h6>
-						<h6>Step # 3: Clcik Restore to complete operation</h6>
+						<h6>{_('Step # 1: Click on Recycle Bin, located at Side Navigation Bar')}</h6>
+						<h6>{_('Step # 2: In Recycle Bin, Right Clcik on The File/Folder, you want to restore')}</h6>
+						<h6>{_('Step # 3: Clcik Restore to complete operation')}</h6>
 					</ul>
 
 					{/* <video controls>

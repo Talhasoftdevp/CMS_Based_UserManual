@@ -1,17 +1,10 @@
 import React from 'react';
-
+import _ from '../../Language/Language';
 // import CreateGroup from '../../assets/CreateGroup.mp4'
 
 class EmptyRecycleBin extends React.Component {
 	state = {
 		loadVideo: true
-	};
-
-	handleVideoClick = (e) => {
-		e.target.pause();
-		e.target.currentTime = 0;
-		e.target.load();
-		e.target.play();
 	};
 
 	componentDidMount() {
@@ -28,10 +21,10 @@ class EmptyRecycleBin extends React.Component {
 		return (
 			<div>
 				<div>
-					<h3>To Empty Recycle Bin, Please follow below mention steps:</h3>
+					<h3>{_('To Empty Recycle Bin, Please follow below mention steps:')}</h3>
 					<ul>
-						<h6>Step # 1: Click on Recycle Bin, located at Side Navigation Bar</h6>
-						<h6>Step # 2: Right Click on Recycle Bin, and click on Empty Recycle Bin </h6>
+						<h6>{_('Step # 1: Click on Recycle Bin, located at Side Navigation Bar')}</h6>
+						<h6>{_('Step # 2: Right Click on Recycle Bin, and click on Empty Recycle Bin')} </h6>
 					</ul>
 
 					{/* <video controls>

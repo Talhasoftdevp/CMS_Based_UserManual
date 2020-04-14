@@ -1,17 +1,10 @@
 import React from 'react';
-
+import _ from '../../Language/Language';
 import EditGroup from '../../assets/Groups/EditGroup.mp4';
 
 class Edit_Group extends React.Component {
 	state = {
 		loadVideo: true
-	};
-
-	handleVideoClick = (e) => {
-		e.target.pause();
-		e.target.currentTime = 0;
-		e.target.load();
-		e.target.play();
 	};
 
 	componentDidMount() {
@@ -28,12 +21,13 @@ class Edit_Group extends React.Component {
 		return (
 			<div>
 				<div>
-					<h3>To Edit Group, please follow below mention steps:</h3>
+					<h3>{_('To Edit Group, please follow below mention steps:')}</h3>
 					<ul>
-						<h6>Step # 1: Double Click on the Group ,to whom you want to edit</h6>
+						<h6>{_('Step # 1: Double Click on the Group ,to whom you want to edit')}</h6>
 						<h6>
-							Step # 2: Change Field Values , reassign rights or add multiple Directories with rights as
-							per your needs
+							{_(
+								'Step # 2: Change Field Values , reassign rights or add multiple Directories with rights as per your needs'
+							)}
 						</h6>
 					</ul>
 

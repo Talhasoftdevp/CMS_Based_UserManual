@@ -1,17 +1,10 @@
 import React from 'react';
-
+import _ from '../../Language/Language';
 import General_Video from '../../assets/General/General.mp4';
 
 class General extends React.Component {
 	state = {
 		loadVideo: true
-	};
-
-	handleVideoClick = (e) => {
-		e.target.pause();
-		e.target.currentTime = 0;
-		e.target.load();
-		e.target.play();
 	};
 
 	componentDidMount() {
@@ -28,10 +21,14 @@ class General extends React.Component {
 		return (
 			<div>
 				<div>
-					<h3>Enter Your Company Details:</h3>
+					<h3>{_('Enter Your Company Details:')}</h3>
 					<ul>
-						<h6>Step # 1: Input Field Values, with respective to your Company</h6>
-						<h6>Step # 2: Proceed to SMTP Configuration tab for Email sending/recieving configurations </h6>
+						<h6>{_('Step # 1: Input Field Values, with respective to your Company')}</h6>
+						<h6>
+							"{_(
+								'Step # 2: Proceed to SMTP Configuration tab for Email sending/recieving configurations'
+							)}"
+						</h6>
 					</ul>
 					<video controls>
 						<source src={General_Video} type="video/mp4" />

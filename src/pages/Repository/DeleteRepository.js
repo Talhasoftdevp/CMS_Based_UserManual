@@ -1,17 +1,10 @@
 import React from 'react';
-
+import _ from '../../Language/Language';
 import DeleteRepository from '../../assets/Repositories/DeleteRepository.mp4';
 
 class Delete_Repository extends React.Component {
 	state = {
 		loadVideo: true
-	};
-
-	handleVideoClick = (e) => {
-		e.target.pause();
-		e.target.currentTime = 0;
-		e.target.load();
-		e.target.play();
 	};
 
 	componentDidMount() {
@@ -28,10 +21,10 @@ class Delete_Repository extends React.Component {
 		return (
 			<div>
 				<div>
-					<h3>To Delete Repository, please follow below mention steps:</h3>
+					<h3>{_('To Delete Repository, please follow below mention steps:')}</h3>
 					<ul>
-						<h6>Step # 1: Right Click on the Repository ,to whom you want to Delete</h6>
-						<h6>Step # 2: Click on Delete, to proceed</h6>
+						<h6>{_('Step # 1: Right Click on the Repository ,to whom you want to Delete')}</h6>
+						<h6>{_('Step # 2: Click on Delete, to proceed')}</h6>
 					</ul>
 
 					<video controls>

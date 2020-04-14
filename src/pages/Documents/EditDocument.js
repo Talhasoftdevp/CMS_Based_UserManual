@@ -1,17 +1,10 @@
 import React from 'react';
-
+import _ from '../../Language/Language';
 import EditDocument from '../../assets/Documents/EditDocument.mp4';
 
 class Edit_Document extends React.Component {
 	state = {
 		loadVideo: true
-	};
-
-	handleVideoClick = (e) => {
-		e.target.pause();
-		e.target.currentTime = 0;
-		e.target.load();
-		e.target.play();
 	};
 
 	componentDidMount() {
@@ -28,12 +21,13 @@ class Edit_Document extends React.Component {
 		return (
 			<div>
 				<div>
-					<h3>To Edit Document, please follow below mention steps:</h3>
+					<h3>{_('To Edit Document, please follow below mention steps:')}</h3>
 					<ul>
-						<h6>Step # 1: Double Click on the Document ,to whom you want to edit</h6>
+						<h6>{_('Step # 1: Double Click on the Document ,to whom you want to edit')}</h6>
 						<h6>
-							Step # 2: Change Document Name , Uplaod New Version of Document by Clicking on Choose File
-							in Select Document
+							{_(
+								'Step # 2: Change Document Name , Uplaod New Version of Document by Clicking on Choose File in Select Document'
+							)}
 						</h6>
 					</ul>
 
